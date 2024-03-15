@@ -17,19 +17,25 @@ const scissorsBtn = document.getElementById("scissors-btn");
 // Step 3: Add event listeners to the buttons
 rockBtn.addEventListener("click", function () {
     player1ChoiceDisplay.innerHTML = '';
-    var rockImage = document.createElement('img');
-    rockImage.src = "projects/03-rock-paper-scissors/images/rock-left.png";
-    player1ChoiceDisplay.appendChild(rockImage);
+    var rockImageLeft = document.createElement('img');
+    rockImageLeft.src = "https://github.com/franskeiser/AWSCC-CodeQuest-Frontend/blob/main/projects/03-rock-paper-scissors/images/rock-left.png?raw=true";
+    player1ChoiceDisplay.appendChild(rockImageLeft);
     playRound('Rock');
 });
 
 paperBtn.addEventListener("click", function () {
-    player1ChoiceDisplay.textContent = 'Paper';
+    player1ChoiceDisplay.innerHTML = '';
+    var paperImageLeft = document.createElement('img');
+    paperImageLeft.src = "https://github.com/franskeiser/AWSCC-CodeQuest-Frontend/blob/main/projects/03-rock-paper-scissors/images/Paper%20-%20left.png?raw=true";
+    player1ChoiceDisplay.appendChild(paperImageLeft);
     playRound('Paper');
 });
 
 scissorsBtn.addEventListener("click", function () {
-    player1ChoiceDisplay.textContent = 'Scissors';
+    player1ChoiceDisplay.innerHTML = '';
+    var scissorImageLeft = document.createElement('img');
+    scissorImageLeft.src = "https://github.com/franskeiser/AWSCC-CodeQuest-Frontend/blob/main/projects/03-rock-paper-scissors/images/Scissors%20-%20left.png?raw=true";
+    player1ChoiceDisplay.appendChild(scissorImageLeft);
     playRound('Scissors');
 });
 
