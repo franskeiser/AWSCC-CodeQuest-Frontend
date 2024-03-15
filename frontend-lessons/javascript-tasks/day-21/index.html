@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id="myLink" href="#">Click Me</a>
+    <div id="myDiv">This is a div</div>
+    <p id="myParagraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia aspernatur tenetur aperiam architecto impedit dolores, inventore corporis dignissimos, totam quasi cumque explicabo neque? Eos distinctio a magnam commodi quod amet. Cumque corporis neque nulla? Similique quam iusto vitae quae perspiciatis!</p>
+    
+    <script>
+        // Task 1
+        const myLink = document.getElementById("myLink");
+        myLink.setAttribute("target", '_blank');
+        console.log(myLink);
+
+        // Task 2
+        const myDiv = document.getElementById("myDiv");
+        myDiv.classList.add('highlight');
+
+        // Task 3
+        myDiv.classList.remove('highlight');
+
+        // Task 4
+        const myParagraph = document.getElementById("myParagraph");
+        myParagraph.textContent ='Hello, world!';
+
+        // Task 5
+        myParagraph.style.color = 'red';
+        myParagraph.style.backgroundColor = 'lightgray';
+        myParagraph.style.fontSize = '18px';
+    </script>
+</body>
+</html>

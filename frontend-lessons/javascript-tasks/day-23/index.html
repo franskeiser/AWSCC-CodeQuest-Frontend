@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">Click ME!</button>
+    <button id="secondButton">Click MEE!</button>
+    <button id="thirdButton">Click MEEE!</button>
+    <label for="text">Text: </label>
+    <input type="text" id="text" name="text">
+    <script>
+        const button = document.getElementById("button");
+        button.addEventListener("click", function(event) {
+            alert("Button Clicked!");
+            
+        });
+
+        const secondButton = document.getElementById("secondButton");
+        secondButton.addEventListener("dblclick", function(event) {
+            alert("Button Double Clicked!");
+        });
+
+        const thirdButton = document.getElementById("thirdButton");
+        thirdButton.addEventListener("mouseenter", function(event) {
+            thirdButton.style.backgroundColor = "red";
+        });
+
+        const text = document.getElementById("text");
+        text.addEventListener("keypress", function(event) {
+            console.log(text.value);
+        });
+
+
+    </script>
+</body>
+</html>

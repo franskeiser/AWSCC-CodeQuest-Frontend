@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="hightlight">Franz</h1>
+    <h1>Hello</h1>
+    <h1>This is a heading</h1>
+    <p class="info" id="firstParagraph">Paragraph</p>
+    <p id="secondParagraph">Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <div id="header">This is a div</div>
+    <script>
+        const paragraph = document.getElementsByTagName("p");
+        const elements = document.getElementsByClassName("info");
+        const id = document.getElementById("header");
+        const firstElement = document.querySelector(".highlight");
+        const firstParagraph = document.getElementById("firstParagraph");
+        const secondParagraph = document.getElementById("secondParagraph");
+        secondParagraph.textContent = "This paragraph is now updated!";
+        id.style.backgroundColor = 'green';
+        const newH3 = document.createElement("h3");
+        newH3.textContent = "New Section";
+        document.body.appendChild(newH3);
+        firstParagraph.remove();
+        id.addEventListener("click", function(){
+            console.log('Header is Clicked!');
+        });
+
+        const colors = ['orange', 'blue', 'yellow'];
+        for (let i = 0; i < colors.length; i++) {
+            paragraph[i].style.backgroundColor = colors[i];
+        }
+    </script>
+</body>
+</html>

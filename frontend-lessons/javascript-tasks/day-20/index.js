@@ -13,10 +13,12 @@
    
 //    d. The first element with the class "highlight" using `querySelector`.
 
+
 // Task 2: Modifying Elements
 
 // 3. Change the text content of the second paragraph to "This paragraph is now updated!".
 // 4. Change the background color of the div with the ID "header" to a different color of your choice.
+
 
 // Task 3: Creating and Appending Elements
 

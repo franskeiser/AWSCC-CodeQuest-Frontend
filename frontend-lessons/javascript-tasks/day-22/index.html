@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dynamicContainer">
+
+    </div>
+    <script>
+        const dynamicContainer = document.getElementById("dynamicContainer");
+        const newImg = document.createElement('img');
+        newImg.src = 'https://scontent.fmnl3-1.fna.fbcdn.net/v/t39.30808-6/370495197_155027527638166_214907663657388670_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGuA0xFM1C07aL843dFYZsBmvoSMaPBUWqa-hIxo8FRahlLyC6hx54Ju39nGKdetBaFN32hh3dFDt9A7RcBp6A2&_nc_ohc=Voh2PUfJXkMAX_fyOQm&_nc_zt=23&_nc_ht=scontent.fmnl3-1.fna&oh=00_AfCunz8trDXmkNqCbIwsC1BGs7k-ejkASLuvV5rjdEA6Cw&oe=65F33E67';
+        newImg.alt = 'hello world';
+        newImg.style.width = '500px';
+        dynamicContainer.appendChild(newImg);
+
+    </script>
+</body>
+</html>
