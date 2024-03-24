@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #31363F;
+}
+
+header {
+    height: 20vh;
+    background-color: #76ABAE;
+    color: #EEEEEE;
+}
+
+header h1 {
+    font-size: 40px;    
+    font-family: 'Rubik', 'sans-serif';
+    letter-spacing: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+header p {
+    display: flex;
+    text-align: center;
+    justify-content: center;    
+    padding-top: 10px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    color: #EEEEEE;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        'mainGame checkNum';
+}
+
+#mainGame {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    grid-area: mainGame;
+    height: 80vh;
+
+}
+
+#mainGame label {
+    font-family: Rubik, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#mainGame > *{
+    margin-bottom: 20px;
+}
+
+input {
+    width: 150px; 
+    padding: 10px; 
+    border: 2px solid #ccc; 
+    border-radius: 5px;
+    font-size: 16px; 
+    outline: none; 
+}
+
+
+input:focus {
+    border-color: #76ABAE; 
+    box-shadow: 0 0 5px #76ABAE; 
+}
+
+button {
+    padding: 10px 24px; 
+    border: none; 
+    border-radius: 5px; 
+    background-color: #222831; 
+    color: #fff;
+    font-size: 15px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+button:hover {
+    background-color: #eee;
+    color: black;
+}
+
+
+button:focus {
+    outline: none;
+}
+
+#checkNum {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    flex-direction: column; 
+    background-color: #222831; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+    grid-area: checkNum;
+    height: 80vh; 
+    font-family: 'Rubik', sans-serif;  
+    font-size: 20px; 
+}
+
+
+#checkNum h1 {
+    color: #fff; 
+    margin-bottom: 10px; 
+}
+
+#playAgain {
+    background-color: white; 
+    color: black;
+}
+
+#playAgain:hover {
+    background-color: black;
+    color: white;
+}
+

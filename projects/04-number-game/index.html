@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Glitch&family=Rubik:ital,wght@0,300..900;1,300..900&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>NUMBER GUESSING GAME</h1>
+        <p>Guess the correct number chosen by the system within the range of 1 to 100.</p>
+    </header>
+    <main>
+        <div id="mainGame">
+            <label for="guess">What is your guess?</label> 
+            <input type="number" min="0" max="100" id="guessNum"> 
+            <button id="check">Check</button>
+        </div>
+        <div id="checkNum">
+            <h1>Choose from 1 to 100</h1>
+        </div>
+    </main>
+    <script>
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+    const maxAttempts = 5;
+
+    function updateFeedbackMessage(message) {
+        const feedbackMessage = document.createElement('h1');
+        feedbackMessage.textContent = message;
+        feedbackMessage.style.fontSize = '30px';
+        return feedbackMessage;
+    }
+
+    function resetGame() {
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+        attempts = 0;
+        document.getElementById('guessNum').value = '';
+        document.getElementById('guessNum').disabled = false;
+        document.getElementById('check').disabled = false;
+
+        const playAgainButton = document.getElementById('playAgain');
+        playAgainButton.parentNode.removeChild(playAgainButton);
+
+        document.getElementById('checkNum').innerHTML = '<h1>Choose from 1 to 100</h1>';
+    }
+
+    function displayFeedback(guess) {
+        attempts++;
+        const checkNum = document.getElementById('checkNum');
+        const remainingAttempts = maxAttempts - attempts;
+
+        checkNum.innerHTML = '';
+
+        if (attempts === maxAttempts && guess !== randomNumber) {
+            const feedbackMessage = updateFeedbackMessage(`You lost! The correct number was ${randomNumber}.`);
+            checkNum.appendChild(feedbackMessage);
+            document.getElementById('guessNum').disabled = true;
+            document.getElementById('check').disabled = true;
+
+            const playAgainButton = document.createElement('button');
+            playAgainButton.textContent = 'Play Again';
+            playAgainButton.id = 'playAgain';
+            playAgainButton.addEventListener('click', resetGame);
+            checkNum.appendChild(playAgainButton);
+        } else if (guess === randomNumber) {
+            const feedbackMessage = updateFeedbackMessage(`Congratulations! You guessed the correct number ${randomNumber} in ${attempts} attempts.`);
+            checkNum.appendChild(feedbackMessage);
+            document.getElementById('guessNum').disabled = true;
+            document.getElementById('check').disabled = true;
+
+            const playAgainButton = document.createElement('button');
+            playAgainButton.textContent = 'Play Again';
+            playAgainButton.id = 'playAgain';
+            playAgainButton.addEventListener('click', resetGame);
+            checkNum.appendChild(playAgainButton);
+        } else {
+            const feedbackMessage = guess < randomNumber ? 'Too low. Try again.' : 'Too high. Try again.';
+            const feedbackMessageElement = updateFeedbackMessage(`${feedbackMessage}`);
+            checkNum.appendChild(feedbackMessageElement);
+            if (remainingAttempts > 0) {
+                const remainingAttemptsMessage = updateFeedbackMessage(`Remaining attempts: ${remainingAttempts}`);
+                checkNum.appendChild(document.createElement('br'));
+                checkNum.appendChild(remainingAttemptsMessage);
+            }
+        }
+
+        document.getElementById('guessNum').value = ''; 
+    }
+
+    document.getElementById('check').addEventListener('click', function() {
+        const guess = parseInt(document.getElementById('guessNum').value);
+        if (guess >= 1 && guess <= 100) {
+            displayFeedback(guess);
+        } else {
+            alert('Please enter a number between 1 and 100.');
+        }
+    });
+    </script>
+</body>
+</html>
