@@ -64,6 +64,17 @@ function timer(player1Choice, player2Choice) {
     }, 1000);
 }
 
+function getImageSource(choice) {
+    switch(choice) {
+        case 'Rock':
+            return "https://github.com/franskeiser/AWSCC-CodeQuest-Frontend/blob/main/projects/03-rock-paper-scissors/images/rock-right.png?raw=true";
+        case 'Paper':
+            return "https://github.com/franskeiser/AWSCC-CodeQuest-Frontend/blob/main/projects/03-rock-paper-scissors/images/Paper%20-%20right.png?raw=true";
+        case 'Scissors':
+            return "https://github.com/franskeiser/AWSCC-CodeQuest-Frontend/blob/main/projects/03-rock-paper-scissors/images/Scissors%20-%20right.png?raw=true";
+    }
+}
+
 function determineWinner(player1Choice, player2Choice) {
     if (player1Choice === player2Choice) {
         gameStatusDisplay.textContent = 'TIE!';
